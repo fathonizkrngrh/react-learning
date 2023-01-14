@@ -8,13 +8,16 @@ function BookCreate({ onCreate }) {
   };
   const handleSubmit = (event) => {
     event.preventDefault();
+    if (title === "") {
+      return alert("Title required");
+    }
     onCreate(title);
     setTitle("");
   };
 
   return (
     <div className="book-create">
-      Add a Book
+      <h3>Add a book</h3>
       <form onSubmit={handleSubmit}>
         <label>Title</label>
         <input
