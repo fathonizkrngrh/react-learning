@@ -1,0 +1,25 @@
+###
+GET http://localhost:3001/books HTPP/1.1
+Content-Type: application/json
+
+
+### 
+POST http://localhost:3001/books 
+Content-Type: application/json
+
+{
+    "title": "Harry Potter"
+}
+
+
+### 
+PUT  http://localhost:3001/books/1 
+Content-Type: application/json
+
+{
+    "title": "Harry sasfsf"
+}
+
+### 
+DELETE   http://localhost:3001/books/1 
+Content-Type: application/json
