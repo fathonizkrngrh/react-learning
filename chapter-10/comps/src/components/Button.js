@@ -1,4 +1,4 @@
-import propTypes from "prop-types";
+import PropTypes from "prop-types";
 
 function Button({
   children,
@@ -10,7 +10,11 @@ function Button({
   outline,
   rounded,
 }) {
-  return <button>{children}</button>;
+  return (
+    <button className="btn-success rounded-md bg-sky-400 px-5 py-2 my-2 text-slate-100">
+      {children}
+    </button>
+  );
 }
 
 Button.propTypes = {
