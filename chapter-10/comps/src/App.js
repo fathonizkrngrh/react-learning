@@ -1,20 +1,33 @@
 import Button from "./components/Button";
+import {
+  MdAdsClick,
+  MdAddShoppingCart,
+  MdOutlineRemoveRedEye,
+} from "react-icons/md";
 
 function App() {
+  const clickHandler = () => {
+    console.log("active");
+  };
   return (
     <div>
       <div>
-        <Button success primary rounded outline>
+        <Button primary rounded outline className="mb-1" onClick={clickHandler}>
+          <MdAdsClick />
           Click me!!
         </Button>
       </div>
       <div>
         <Button danger outline>
+          <MdAddShoppingCart />
           Buy Now!
         </Button>
       </div>
       <div>
-        <Button warning>See Deal!</Button>
+        <Button warning rounded onMouseEnter={clickHandler}>
+          <MdOutlineRemoveRedEye />
+          See Deal!
+        </Button>
       </div>
       <div>
         <Button secondary outline>
@@ -22,7 +35,7 @@ function App() {
         </Button>
       </div>
       <div>
-        <Button secondary rounded>
+        <Button success rounded onMouseLeave={clickHandler}>
           Something!
         </Button>
       </div>

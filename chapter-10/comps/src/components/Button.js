@@ -1,4 +1,5 @@
 import PropTypes from "prop-types";
+import classNames from "classnames";
 
 function Button({
   children,
@@ -9,9 +10,25 @@ function Button({
   danger,
   outline,
   rounded,
+  ...rest
 }) {
+  const classes = classNames( {rest.className}, "flex item-center px-3 py-2 my-2 border ", {
+    "border-blue-500 bg-blue-500 text-white": primary,
+    "border-gray-500 bg-gray-500 text-white": secondary,
+    "border-green-500 bg-green-500 text-white": success,
+    "border-yellow-500 bg-yellow-500 text-white": warning,
+    "border-red-500 bg-red-500 text-white": danger,
+    "rounded-lg": rounded,
+    "bg-white text-": outline,
+    "text-blue-500": outline && primary,
+    "text-gray-500": outline && secondary,
+    "text-green-500": outline && success,
+    "text-yellow-500": outline && warning,
+    "text-red-500": outline && danger,
+  });
+
   return (
-    <button className="btn-success rounded-md bg-sky-400 px-5 py-2 my-2 text-slate-100">
+    <button {...rest} className={classes}>
       {children}
     </button>
   );
